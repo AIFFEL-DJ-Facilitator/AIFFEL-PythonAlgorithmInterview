@@ -1,6 +1,3 @@
-# **Chapter 6-5 그룹 애너그램**
-"""
-
 strs = ["eat","tea","tan","ate","nat","bat"]
 
 import collections
