@@ -50,5 +50,5 @@ start_time = time.time() # 시작 시간 측정
 result = three_sum(nums) # 결과 출력
 elapsed_time = time.time() - start_time # 소요된 시간 = 현재시간 - 시작 시간
 
-print(result) # 뒤집은 결과 출력
+print(result) # 결과 출력
 print(f"Elapsed time : {elapsed_time} [sec]") # 소요 시간 출력
