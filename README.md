@@ -126,6 +126,38 @@ Prob 26. 원형 에크 디자인
 
 ### 11장. 해시 테이블
 
+Prob 28. 해시맵 디자인
+
+Prob 29. 보석과 돌
+- [Sol 1. 해시 테이블을 이용한 풀이](./ch11/p29_s1.py)
+- [Sol 2. defaultdict를 이용한 비교 생략](./ch11/p29_s2.py)
+- [Sol 3. Counter로 계산 생략](./ch11/p29_s3.py)
+- [Sol 4. 파이썬다운 방식](./ch11/p29_s4.py)
+
+Prob 30. 중복 문자 없는 가장 긴 부분 문자열
+
 Prob 31. 상위 K 빈도 요소
 - [Sol 1. Counter를 이용한 음수 순 추출](./ch11/p31_s1.py)
 - [Sol 2. 파이썬다운 방식](./ch11/p31_s2.py)
+
+
+### 12장. 그래프
+
+Prob 32. 섬의 개수
+
+Prob 33. 전화 번호 문자 조합
+
+Prob 34. 순열
+- [Sol 1. DFS를 활용한 순열 생성](./ch12/p34_s1.py)
+- [Sol 2. itertools 모듈 사용](./ch12/p34_s2.py)
+
+Prob 35. 조합
+
+Prob 36. 조합의 합
+- [Sol 1. DFS로 중복 조합 그래프 탐색](./ch12/p36_s1.py)
+
+Prob 37. 부분 집합
+
+Prob 38. 일정 재구성
+
+Prob 39. 코스 스케줄
