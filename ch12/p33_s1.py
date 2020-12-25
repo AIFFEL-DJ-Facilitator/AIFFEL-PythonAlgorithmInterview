@@ -41,9 +41,7 @@ Ex) if len("23") == len("a"):
 
 import time
 
-# 문자 조합 출력 함수
 def letter_combinations(digits):
-
     def dfs(index, path):
         # path 추가하는 코드
         # 입력 숫자의 길이가 현재 path 길이와 같다면 추가
