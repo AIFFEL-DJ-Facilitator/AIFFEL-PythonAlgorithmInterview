@@ -13,23 +13,29 @@ Solution 1. 모든 조합 탐색
 단순히 입력에 주어진 번호에 해당하는 알파벳들로 만들 수 있는 모든 조합을 탐색하면 된다.
 여기서는 DFS로 문제를 풀이하였다.
 
-- vertex 탐색 방법
-입력 숫자를 하나씩 가져오기 위해, index를 for문으로 순회한다. (1)
-그리고, 숫자에 해당하는 알파벳을 다시 for문으로 가져온다. (2)
-Ex) digits = "23"
-    for i in range(0, 1): --> (1)
+- 문자 조합(path) 탐색 방법
+path를 만들기 위해서는, 전화번호 숫자에 해당하는 알파벳을 하나씩 가져와야 한다.
+따라서, 다음의 순서로 숫자와 해당하는 알파벳들을 탐색한다.
+
+1. 입력 숫자를 하나씩 가져오기 위해, index를 for문으로 순회한다.
+2. 숫자에 해당하는 알파벳을 for문으로 가져온다.
+
+Ex) digits = "23", path = ""
+    for i in range(0, len(digits)) --> (1)
         for alphabet in range(digits[i]) --> (2)
+            # 문자 조합 : path + alphabet
 
-- vertex 추가하는 시점
-입력으로 주어진 숫자의 길이와 알파벳의 길이가 같을 때,
-각 숫자에 해당하는 알파벳의 조합이 만들어졌다고 보고 vertex를 추가한다.
+
+- 문자 조합(path) 추가하는 시점
+입력으로 주어진 숫자의 길이와 path의 길이가 같을 때,
+알파벳 문자 조합이 만들어졌다고 보고 path를 추가한다.
 Ex) if len("23") == len("a"):
-        // vertex 추가 X
+        // path 추가 X
     if len("23") == len("ad"):
-        // vertex 추가 O
+        // path 추가 O
 
 
-정리하자면, 입력 숫자에 해당하는 알파벳을 for문으로 순회하면서 알파벳 문자 조합을 구성하고,
+정리하자면, 입력 숫자에 해당하는 알파벳을 for문으로 순회하면서 문자 조합(path)을 구성하고,
 구성된 문자열의 길이가 입력 숫자의 길이와 같을 때, 추가하는 것이다.
 '''
 
@@ -37,14 +43,15 @@ import time
 
 # 문자 조합 출력 함수
 def letter_combinations(digits):
-    # vertex 추가하는 코드
+
     def dfs(index, path):
-        # 입력 숫자의 길이가 현재 path 길이와 같다면 조합에 추가
+        # path 추가하는 코드
+        # 입력 숫자의 길이가 현재 path 길이와 같다면 추가
         if len(digits) == len(path):
             result.append(path)
             return
 
-        # vertex 탐색하는 코드
+        # path 탐색하는 코드
         # 1. 입력 숫자의 index를 순회
         for i in range(index, len(digits)):
             # 2. 입력 숫자에 해당하는 알파벳 순회
