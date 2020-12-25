@@ -17,8 +17,8 @@ Solution 1. 모든 조합 탐색
 입력 숫자를 하나씩 가져오기 위해, index를 for문으로 순회한다. (1)
 그리고, 숫자에 해당하는 알파벳을 다시 for문으로 가져온다. (2)
 Ex) digits = "23"
-    for idx in range(0, 1): --> (1)
-        for alphabet in range(digits[idx]) --> (2)
+    for i in range(0, 1): --> (1)
+        for alphabet in range(digits[i]) --> (2)
 
 - vertex 추가하는 시점
 입력으로 주어진 숫자의 길이와 알파벳의 길이가 같을 때,
@@ -38,19 +38,19 @@ import time
 # 문자 조합 출력 함수
 def letter_combinations(digits):
     # vertex 추가하는 코드
-    def dfs(digits_idx, str_vertex):
-        # 입력 숫자의 길이가 현재 str_vertex 길이와 같다면 조합에 추가
-        if len(digits) == len(str_vertex):
-            result.append(str_vertex)
+    def dfs(index, path):
+        # 입력 숫자의 길이가 현재 path 길이와 같다면 조합에 추가
+        if len(digits) == len(path):
+            result.append(path)
             return
 
         # vertex 탐색하는 코드
         # 1. 입력 숫자의 index를 순회
-        for digits_idx in range(digits_idx, len(digits)):
+        for i in range(index, len(digits)):
             # 2. 입력 숫자에 해당하는 알파벳 순회
-            for alphabet in dic[digits[digits_idx]]:
+            for alphabet in dic[digits[i]]:
                 # 3. 만들어진 문자 조합으로 dfs 재귀 호출
-                dfs(digits_idx + 1, str_vertex + alphabet)
+                dfs(i + 1, path + alphabet)
 
     # 예외 처리 : digits가 비어있다면 그대로 반환
     if not digits:
