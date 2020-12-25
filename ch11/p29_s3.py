@@ -1,10 +1,14 @@
 import collections
 
 def numJewelsInStones(J, S):
-    freqs = collections.Counter(S)  # 돌(S) 빈도 수 계산
+    # collections의 Counter함수 Reference
+    # https://excelsior-cjh.tistory.com/94
+    freqs = collections.Counter(S)
+    '''
+    Counter({'b': 4, 'A': 2, 'a': 1})
+    '''
     count = 0
-
-    # 비교 없이 보석(J) 빈도 수 합산
+    
     for char in J:
         count += freqs[char]
 

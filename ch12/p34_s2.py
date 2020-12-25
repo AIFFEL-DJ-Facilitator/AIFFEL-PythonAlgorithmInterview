@@ -1,5 +1,6 @@
 import itertools
-from typing import List
+# itertools Reference
+# https://geonlee.tistory.com/69
 
 def permute(nums):
     return list(itertools.permutations(nums))
